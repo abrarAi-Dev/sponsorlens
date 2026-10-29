@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SponsorLens — Know before you apply: H-1B sponsorship checker</title>
+<meta name="description" content="Scan a job posting for sponsorship red flags, check a company's H-1B history tier, verify pay against the DOL prevailing wage, and ask recruiters the sponsorship question upfront.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <nav class="nav"><span class="logo">🔍 SponsorLens</span><a href="https://github.com/abrarAi-Dev/sponsorlens" target="_blank" rel="noopener">GitHub</a></nav>
+  <h1>Know before you apply.</h1>
+  <p class="sub">International candidates waste hundreds of applications on roles that were never going to sponsor. SponsorLens scans a posting in seconds: red-flag phrases, company sponsorship tier, and the prevailing-wage floor — plus a ready-to-send recruiter message that asks the question upfront.</p>
+  <div class="hero-cta"><a class="btn" href="#scanner">Scan a posting</a><a class="btn ghost" href="#companies">Check a company</a></div>
+  <p class="disclaimer">Free tool, not legal advice. Always verify sponsorship with the employer and wage data at the official DOL / USCIS sources linked below.</p>
+</header>
+
+<main>
+<section id="scanner" class="card">
+  <h2>1. Posting scanner</h2>
+  <label>Company name <input id="companyInput" type="text" placeholder="e.g. Mayo Clinic"></label>
+  <label>Offered annual salary (USD, optional) <input id="salaryInput" type="number" min="0" placeholder="e.g. 85000"></label>
+  <label>Paste the full job posting
+    <textarea id="postingInput" rows="9" placeholder="Paste the job description here..."></textarea>
+  </label>
+  <button class="btn" id="scanBtn">Scan posting</button>
+  <button class="btn ghost" id="sampleBtn">Load a sample posting</button>
+  <div id="scanResult" class="result hidden"></div>
+</section>
+
+<section id="companies" class="card">
+  <h2>2. Company sponsorship tiers</h2>
+  <p class="hint">Starter curated list — qualitative tiers, not petition counts. Verify any company in the <a href="https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" target="_blank" rel="noopener">USCIS H-1B Employer Data Hub</a> before relying on it.</p>
+  <input id="companySearch" type="text" placeholder="Search a company...">
+  <div id="companyGrid" class="grid"></div>
+  <p id="companyMiss" class="hint hidden">Not in the starter list — that means <strong>unknown, verify first</strong>, not "doesn't sponsor". Ask the recruiter using the template below and check the USCIS Data Hub.</p>
+</section>
+
+<section id="wage" class="card">
+  <h2>3. Prevailing-wage check</h2>
+  <p class="hint">An H-1B role must pay at least the DOL prevailing wage for the occupation + location (Level 1 is the entry floor). Look yours up at <a href="https://flag.dol.gov/wage-data/wage-search" target="_blank" rel="noopener">flag.dol.gov wage search</a>, then compare:</p>
+  <label>Offered salary (USD) <input id="wageOffer" type="number" min="0" placeholder="e.g. 85000"></label>
+  <label>DOL prevailing wage — Level 1 (USD) <input id="wageFloor" type="number" min="0" placeholder="e.g. 78000"></label>
+  <button class="btn" id="wageBtn">Compare</button>
+  <div id="wageResult" class="result hidden"></div>
+</section>
+
+<section class="card">
+  <h2>4. Ask the recruiter — upfront, politely</h2>
+  <label>Your name <input id="tplName" type="text" placeholder="Your name"></label>
+  <label>Role <input id="tplRole" type="text" placeholder="e.g. Business Analyst"></label>
+  <label>Company <input id="tplCompany" type="text" placeholder="e.g. Acme Health"></label>
+  <label>Channel
+    <select id="tplChannel"><option value="email">Email</option><option value="reply">Reply to a recruiter message</option><option value="linkedin">LinkedIn note (short)</option></select>
+  </label>
+  <button class="btn" id="tplBtn">Generate message</button>
+  <textarea id="tplOut" rows="7" readonly placeholder="Your message will appear here..."></textarea>
+  <button class="btn ghost" id="copyBtn">Copy message</button>
+</section>
+
+<section class="card">
+  <h2>Your saved checks</h2>
+  <p class="hint">Stored only in your browser (localStorage). Nothing leaves your device.</p>
+  <div id="savedList"></div>
+</section>
+</main>
+
+<footer>
+  <p>Built by <a href="https://github.com/abrarAi-Dev" target="_blank" rel="noopener">Abrar Shariff Mohammed</a> · SponsorLens v1 · Official sources: <a href="https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" target="_blank" rel="noopener">USCIS H-1B Data Hub</a> · <a href="https://flag.dol.gov/wage-data/wage-search" target="_blank" rel="noopener">DOL FLAG wage search</a></p>
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

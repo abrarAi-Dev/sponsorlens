@@ -1,0 +1,26 @@
+:root{--bg:#0b1220;--card:#121c31;--ink:#eaf0fb;--muted:#9fb0cc;--accent:#4f8cff;--line:#243354}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--accent)}
+.hero{padding:28px 20px 36px;max-width:900px;margin:0 auto}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px}
+.logo{font-weight:800;font-size:20px}
+.hero h1{font-size:44px;margin:0 0 12px}
+.sub{color:var(--muted);font-size:18px;line-height:1.55;max-width:720px}
+.disclaimer{color:var(--muted);font-size:13px;margin-top:14px}
+.btn{display:inline-block;background:var(--accent);color:#fff;border:none;padding:11px 18px;border-radius:10px;font-size:15px;cursor:pointer;text-decoration:none;margin:6px 6px 6px 0}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+main{max-width:900px;margin:0 auto;padding:0 20px 40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+.card h2{margin-top:0}
+label{display:block;margin:12px 0;color:var(--muted);font-size:14px}
+input,textarea,select{width:100%;margin-top:6px;background:#0d1730;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:11px;font-size:15px;font-family:inherit}
+.hint{color:var(--muted);font-size:14px;line-height:1.5}
+.result{margin-top:16px;background:#0d1730;border:1px solid var(--line);border-radius:12px;padding:16px;line-height:1.55}
+.hidden{display:none}
+.score{font-size:22px;font-weight:800;margin-bottom:8px}
+.result ul{padding-left:18px}.result li.red{color:#ff9a9a}.result li.green{color:#8fe3a8}.result li.amber{color:#ffd98f}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:14px}
+.company{background:#0d1730;border:1px solid var(--line);border-radius:12px;padding:14px}
+.company p{color:var(--muted);font-size:13px;line-height:1.5}
+.saved{padding:8px 0;border-bottom:1px solid var(--line)}.saved span{color:var(--muted);font-size:12px;margin-left:8px}
+footer{max-width:900px;margin:0 auto;padding:10px 20px 36px;color:var(--muted);font-size:13px;line-height:1.6}

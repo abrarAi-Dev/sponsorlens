@@ -2,7 +2,7 @@
 
 **Know before you apply.** International candidates burn hundreds of applications on roles that were never going to sponsor them. SponsorLens scans a job posting in seconds and tells you if it is worth your time.
 
-**Live demo:** https://abrarAi-Dev.github.io/sponsorlens/ (GitHub Pages — enable in repo Settings → Pages → main branch if not live yet)
+**Demo:** https://sponsorlens.vercel.app — *staged address; it goes live as soon as this repo is connected to Vercel (import step still to come, so the link may not resolve yet).*
 
 ## What it does (v1)
 1. **Posting scanner** — paste a job description; SponsorLens detects hard red flags ("will not sponsor", "US citizens only", clearance requirements, OPT/CPT exclusions), green flags ("visa sponsorship available", H-1B mentions, OPT/CPT welcome), and ambiguous phrases worth asking about — then gives a 0-100 score and a plain verdict.
@@ -20,6 +20,14 @@ No build step. Open `index.html` in a browser, or serve the folder:
 python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
+
+## Deploy on Vercel
+This is a plain static site, so Vercel's defaults are all it needs - no `vercel.json` required:
+- Framework preset: **Other**
+- Build command: **none** (leave empty)
+- Output directory: **root** (`.`)
+
+Import this repo in Vercel and deploy; every push to `main` redeploys automatically.
 
 ## Honest limits
 - Company tiers are qualitative and curated, not petition counts. Always verify in the USCIS Data Hub.
